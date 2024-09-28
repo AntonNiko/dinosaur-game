@@ -19,7 +19,7 @@ static_files = {
     '/js/index.js': 'static/js/index.js',
     '/js/game.js': 'static/js/game.js',
     '/js/EndScene.js': 'static/js/EndScene.js',
-    '/js/socket.io.js': 'static/js/socket.io.js',
+    '/js/socket.io.min.js': 'static/js/socket.io.min.js',
     '/assets/sky.png': 'static/assets/sky.png',
     '/assets/nature-row.png': 'static/assets/nature-row.png',
     '/assets/nature-left.png': 'static/assets/nature-left.png',
