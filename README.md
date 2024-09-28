@@ -8,6 +8,11 @@ This is the repository for the SENG 350 group project for Group 12. Team members
 3. Connor Buchko
 
 
+# VENV
+
+```python
+python3 -m venv venv/
+```
 
 ## Installation
 
