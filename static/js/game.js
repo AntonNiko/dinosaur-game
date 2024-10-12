@@ -157,6 +157,12 @@ class Game extends Phaser.Scene {
         /* Initialize cursor so that game captures user input */
         this.cursors = this.input.keyboard.createCursorKeys();
 
+        /* Initialize W,A,S,D keys as additional user input to be captured by game */
+        this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
+        this.keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+        this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
+        this.keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+
         /* Initialize camera at respawn point */
         this.cameras.main.centerOn(bg.displayWidth, bg.displayHeight);
     }

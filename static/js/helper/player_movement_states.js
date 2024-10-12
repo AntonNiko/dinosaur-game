@@ -50,9 +50,9 @@ class PlayerMovementIdleState {
     update(scene) {
         let state = null;
 
-        if (scene.cursors.left.isDown) {
+        if (scene.cursors.left.isDown || scene.keyA.isDown) {
             state = new PlayerMovementMovingLeftState(this.player_data, scene, -PLAYER_X_VELOCITY, this.player_data.x, this.player_data.y, this.color);
-        } else if (scene.cursors.right.isDown) {
+        } else if (scene.cursors.right.isDown || scene.keyD.isDown) {
             state = new PlayerMovementMovingRightState(this.player_data, scene, PLAYER_X_VELOCITY, this.player_data.x, this.player_data.y, this.color);
         }
 
@@ -101,9 +101,9 @@ class PlayerMovementMovingLeftState {
     update(scene) {
         let state = null;
 
-        if(!scene.cursors.left.isDown && !scene.cursors.right.isDown) {
+        if(!(scene.cursors.left.isDown || scene.keyA.isDown) && !(scene.cursors.right.isDown || scene.keyD.isDown)) {
             state = new PlayerMovementIdleState(this.player_data, scene, 'left', this.player_data.x, this.player_data.y, this.color);
-        } else if (scene.cursors.right.isDown){
+        } else if (scene.cursors.right.isDown || scene.keyD.isDown){
             state = new PlayerMovementMovingRightState(this.player_data, scene, PLAYER_X_VELOCITY, this.player_data.x, this.player_data.y, this.color);
         }
 
@@ -152,9 +152,9 @@ class PlayerMovementMovingRightState {
     update(scene) {
         let state = null;
 
-        if(!scene.cursors.left.isDown && !scene.cursors.right.isDown) {
+        if(!(scene.cursors.left.isDown || scene.keyA.isDown) && !(scene.cursors.right.isDown || scene.keyD.isDown)) {
             state = new PlayerMovementIdleState(this.player_data, scene, 'right', this.player_data.x, this.player_data.y, this.color);
-        } else if (scene.cursors.left.isDown){
+        } else if (scene.cursors.left.isDown || scene.keyA.isDown){
             state = new PlayerMovementMovingLeftState(this.player_data, scene, -PLAYER_X_VELOCITY, this.player_data.x, this.player_data.y, this.color);
         }
 

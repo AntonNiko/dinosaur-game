@@ -34,7 +34,7 @@ class PlayerJumpingIdleState {
     update(scene) {
         let state = null;
 
-        if (this.player_data.body.touching.down && scene.cursors.up.isDown) {
+        if (this.player_data.body.touching.down && scene.cursors.space.isDown) {
             state = new PlayerJumpingActiveState(this.player_data, scene, -PLAYER_Y_VELOCITY, this.player_data.x, this.player_data.y);
         }
 
